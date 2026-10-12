@@ -1,0 +1,13 @@
+@model ErrorViewModel
+@{
+    ViewData["Title"] = "Error";
+}
+<main class="error-page">
+    <h1>Something went wrong</h1>
+    <p>Please try again. If the problem continues, restart the application.</p>
+    @if (Model.ShowRequestId)
+    {
+        <p><strong>Request ID:</strong> <code>@Model.RequestId</code></p>
+    }
+    <a href="/">Return to the assistant</a>
+</main>

@@ -1,0 +1,59 @@
+@{
+    ViewData["Title"] = "AI Assistant";
+}
+<main class="app-shell">
+    <aside class="sidebar">
+        <div class="brand"><div class="brand-mark">✦</div><span>orbit<span class="brand-light">.ai</span></span></div>
+        <button id="new-chat" class="new-chat"><span>＋</span> New conversation</button>
+        <div class="side-label">YOUR WORKSPACE</div>
+        <div class="side-item active"><span>◉</span> AI Assistant</div>
+        <div class="side-item"><span>⌘</span> C# & .NET help</div>
+        <div class="side-item"><span>✧</span> Brainstorm ideas</div>
+        <section class="knowledge-panel" aria-label="Knowledge base">
+            <div class="knowledge-heading"><strong>Knowledge base</strong><span id="document-count">0</span></div>
+            <p>Upload text or Markdown files so Orbit can answer using your own notes.</p>
+            <label for="document-file" class="upload-button">＋ Add document</label>
+            <input id="document-file" type="file" accept=".txt,.md,text/plain,text/markdown" hidden />
+            <div id="document-status" class="document-status" role="status">No documents added yet.</div>
+            <ul id="document-list" class="document-list"></ul>
+        </section>
+        <div class="sidebar-bottom">
+            <div class="status-dot"></div>
+            <div><strong>Ready to help</strong><small>ASP.NET Core · C#</small></div>
+        </div>
+    </aside>
+
+    <section class="main-panel">
+        <header class="topbar">
+            <div><span class="eyebrow">YOUR PERSONAL WORKSPACE</span><h1>AI Assistant</h1></div>
+            <div class="topbar-pill"><span class="live-dot"></span> <span id="mode-label">Demo mode</span></div>
+        </header>
+
+        <section id="welcome" class="welcome">
+            <div class="hero-icon">✦</div>
+            <p class="eyebrow">A LITTLE MORE POSSIBLE</p>
+            <h2>What can we work on<br /><span>together today?</span></h2>
+            <p class="welcome-copy">Ask a question, explore an idea, or get help turning a tricky problem into clear next steps. Add your own .txt or .md documents to enable knowledge-grounded answers.</p>
+            <div class="suggestion-grid">
+                <button class="suggestion" data-prompt="Help me plan a C# web application from idea to deployment."><span class="suggestion-icon violet">⌘</span><strong>Plan a project</strong><small>Turn an idea into actionable steps</small><span class="suggestion-arrow">↗</span></button>
+                <button class="suggestion" data-prompt="Explain dependency injection in C# with a simple example."><span class="suggestion-icon blue">{ }</span><strong>Learn C#</strong><small>Understand a concept with examples</small><span class="suggestion-arrow">↗</span></button>
+                <button class="suggestion" data-prompt="Help me debug a .NET API that returns a 500 error."><span class="suggestion-icon orange">⌁</span><strong>Solve a problem</strong><small>Work through a technical challenge</small><span class="suggestion-arrow">↗</span></button>
+                <button class="suggestion" data-prompt="Brainstorm useful AI features for a small business application."><span class="suggestion-icon green">✧</span><strong>Brainstorm ideas</strong><small>Explore options and opportunities</small><span class="suggestion-arrow">↗</span></button>
+                <button class="suggestion" data-prompt="calculate: (125 + 75) * 1.2"><span class="suggestion-icon blue">∑</span><strong>Try the C# calculator tool</strong><small>Run deterministic arithmetic in the backend</small><span class="suggestion-arrow">↗</span></button>
+            </div>
+        </section>
+
+        <section id="chat" class="chat-area" aria-live="polite"></section>
+
+        <footer class="composer-wrap">
+            <form id="chat-form" class="composer">
+                <textarea id="message-input" rows="1" maxlength="4000" placeholder="Message Orbit AI..." aria-label="Your message"></textarea>
+                <div class="composer-bottom">
+                    <div class="composer-hint"><span>↵</span> Enter to send · Shift + Enter for a new line</div>
+                    <button id="send-button" type="submit" aria-label="Send message"><span>↑</span></button>
+                </div>
+            </form>
+            <p class="disclaimer">AI can make mistakes. Check important information. Don't enter confidential or sensitive data.</p>
+        </footer>
+    </section>
+</main>
