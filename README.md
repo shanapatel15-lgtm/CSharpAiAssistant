@@ -1,4 +1,4 @@
-# Orbit AI — C# / ASP.NET Core AI Assistant
+# C# AI Assistance — C# / ASP.NET Core AI Assistant
 
 A starter full-stack AI chat application built with **C#**, **ASP.NET Core MVC**, a JSON API, and a responsive browser interface. Open the solution in Visual Studio.
 
